@@ -105,4 +105,13 @@ Or retrieve global info about the whole data, like:
 ```bash
 python -u .\src\langchain_rag.py "what are the top-5 keywords with the biggest rank increasement?"
 ```
+### 	4. Visualization(unfinished)
+
+**How to run:**
+```bash
+python src/visualization.py
+```
+### 5. WebUI(unfinished)
+```bash
+streamlit run ui/app.py
 ```
