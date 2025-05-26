@@ -1,0 +1,80 @@
+import os
+import json
+
+# --- Intent patterns: Customizable but using proven categories ---
+intent_patterns = {
+    "transactional": [
+        "buy", "price", "cost", "near me", "appointment", "book", "discount",
+        "order", "schedule", "get", "deal", "make an appointment", "consultation"
+    ],
+    "informational": [
+        "what is", "how", "benefit", "side effect", "recovery", "difference",
+        "does", "when", "can", "faq", "meaning", "info", "information", "guide", "tips", "explain"
+    ],
+    "navigational": [
+        "clinic", "center", "doctor", "location", "contact", "hours", "address",
+        "website", "site", "map", "directions"
+    ]
+}
+
+# --- Keyword Groups: Copied from your earlier result ---
+keyword_groups = {
+  "Anti-Aging": [
+    "anti-aging","aging","youth","rejuvenation","revitalize","collagen","elastin","age spot","photo aging","sun damage","pigmentation"
+  ],
+  "Body Contouring": [
+    "contour","sculpt","shape","fat","slim","tone","trusculpt","truform","truflex","truid","vaser","lipo","liposuction","coolsculpt",
+    "emface","kybella","cellulite","kybela","kybell","vasser lipo","vasor","vaserlipo","liposucsion"
+  ],
+  "Facial & Laser Services": [
+    "facial","laser","peel","microderm","dermabrasion","extraction","rejuvenate","refresh","glow","diamond","jelly mask",
+    "actinage","biore","melanage","micronage","salicylic","glycolic","tca","dermaplane","co2","limelight","pico","agnes",
+    "scarlet","micropen","nano","celluma","bbl","photofacial","dermaplaning","dermaplain","microdermabration","micropeen",
+    "lazor","lazer","peals","facials","faciels","dimond glow","diaminond"
+  ],
+  "Fillers & Injectables": [
+    "filler","inject","juvederm","restylane","radiesse","sculptra","hyaluronic","hyaluronidase","volume","plump","contour",
+    "lift","prp","collagen","restalyn","restylane","rastelan","radiese","sculptura","hyleronic","hyalronic"
+  ],
+  "Hair Treatments": [
+    "hair restoration","hair removal","laser hair","wax","hair thread","needling","bald","thinning","regrow","follicle"
+  ],
+  "IV Therapy": [
+    "iv","hydration","vitamin","drip","myers","immune","energy","recovery","detox","glutathione","nad+","vitamin c",
+    "b12","immunity boost","hangover","athletic","vitimin","vitamine","intravenous","intraveinous","glutathon","gluthione"
+  ],
+  "Location": [
+    "colorado"
+  ],
+  "Misc Treatments": [
+    "cryotherapy","vessel","ablation","cherry angioma","tag removal","skin tag","tattoo removal","red light","infrared",
+    "led","healing","collagen","inflammation","photobiomodulation"
+  ],
+  "Neurotoxins": [
+    "tox","dysport","xeomin","neurotoxin","wrinkle","line","smooth","relax","forehead","crow","frown","juvaderm","jeuveau"
+  ],
+  "Threads": [
+    "thread","pdo","lift","tighten","face lift","non-surgical","mini lift"
+  ],
+  "TRT/HRT": [
+    "hormone","testosterone","trt","hrt","sex","mens health","men's health","women's health","womens health","o shot",
+    "p shot","o-shot","p-shot","pellets","gainswave","gains wave","bhrt","bioidentical","menopause","andropause","libido",
+    "sexual health","sexual","testostorone","hormon","horomone","pelats","palletes","gaynswave","gainswaive"
+  ],
+  "Weight Loss": [
+    "weight","diet","lipotrim","semaglutide","tirzepatide","injection","metabolism","fat loss","obesity","bmi","ozempic",
+    "wegovy","samaglutide","semiglutide","tirzepatid","ozempick","wegovey","ozimpic"
+  ]
+}
+
+def save_json(obj, out_path):
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+    print(f"Created {out_path}")
+
+if __name__ == "__main__":
+    base_dir = os.path.join("data", "dictionaries")
+    save_json(intent_patterns, os.path.join(base_dir, "intent_patterns.json"))
+    save_json(keyword_groups, os.path.join(base_dir, "keyword_groups.json"))
+    print("\nDone! You can now use these for your feature engineering step.")

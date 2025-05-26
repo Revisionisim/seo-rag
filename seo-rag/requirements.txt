@@ -1,0 +1,15 @@
+langchain
+pandas
+numpy
+pyarrow
+matplotlib
+seaborn
+streamlit
+faiss-cpu
+sentence-transformers
+scikit-learn
+tqdm
+llama-cpp-python
+pinecone-client
+jupyter
+openpyxl

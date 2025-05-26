@@ -1,0 +1,48 @@
+{
+  "transactional": [
+    "buy",
+    "price",
+    "cost",
+    "near me",
+    "appointment",
+    "book",
+    "discount",
+    "order",
+    "schedule",
+    "get",
+    "deal",
+    "make an appointment",
+    "consultation"
+  ],
+  "informational": [
+    "what is",
+    "how",
+    "benefit",
+    "side effect",
+    "recovery",
+    "difference",
+    "does",
+    "when",
+    "can",
+    "faq",
+    "meaning",
+    "info",
+    "information",
+    "guide",
+    "tips",
+    "explain"
+  ],
+  "navigational": [
+    "clinic",
+    "center",
+    "doctor",
+    "location",
+    "contact",
+    "hours",
+    "address",
+    "website",
+    "site",
+    "map",
+    "directions"
+  ]
+}
